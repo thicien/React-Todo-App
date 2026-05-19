@@ -1,8 +1,25 @@
 const express = require('express');
 const app = express();
-app.get('/', (req, res) => {
-    console.log("My server is well configured");
+const PORT = 3000;
+app.use(express.json());
+const users = [
+    { id: 1, name: 'Thicien' },
+    { id: 2, name: 'MUGISHA' }
+]
+app.get('/users', (req, res) => {
+    res.json(users);
 })
-app.listen(5000, () => {
-    console.log("My server is listening to this port");
+app.post('/users', (req, res) => {
+    const newUser = {
+        id: users.length + 1,
+        name: req.body.name
+    };
+    users.push(newUser);
+    res.status(200).json({
+        message: 'The new uses added successfully',
+        name: newUser
+    })
+})
+app.listen(PORT, () => {
+    console.log(`My server is listening to this port ${PORT}`);
 })
