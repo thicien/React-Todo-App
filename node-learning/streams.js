@@ -8,6 +8,7 @@ readStream.on('data', (chunk) => {
     writeStream.write('.\n NEW CHUNK \n');
     writeStream.write(chunk);
 });
+
 const readStream = fs.createReadStream('./folder/tcp.txt', { encoding: 'utf-8' });
 readStream.off('data', (chunk) => {
     console.log(chunk);
