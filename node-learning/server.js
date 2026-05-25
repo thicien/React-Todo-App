@@ -24,7 +24,6 @@ app.post('/users', (req, res) => {
 app.listen(PORT, () => {
     console.log(`My server is listening to this port ${PORT}`);
 })
-
 const http = require('http');
 const server = http.createServer((req, res) => {
     console.log(req);

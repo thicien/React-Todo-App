@@ -11,10 +11,11 @@ const useGetUserById = (userId) => {
   useEffect(() => {
     let isMounted = null;
     try {
-       const response = fetch('https://jsonplaceholder.typicode.com/users');
+      const response = fetch('https://jsonplaceholder.typicode.com/users');
+      const fetch =  await response.json();
     if (!response.ok) {
       throw new Error('Failed to fetch the data');
-      const fetch = response.json();
+      
     }
     } catch (error) {
       if (!isMounted) {
