@@ -54,3 +54,16 @@ dotenv.config();
 const itemRoutes = require('./Routes/itemRoutes');
 const app = express();
 app.use(express.json);
+app.use('items', itemRoutes);
+
+mongoose
+    .connect(process.env.MONGO_URI)
+    .then(() => {
+        console.log('Mongo is connected');
+        app.listen(process.env.PORT, () => {
+            console.log(`Server is running on this port ${process.env.PORT}`)
+        })
+    }) 
+    .catch(error => {
+        console.log(error);
+    })
