@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
     try {
-        const items = await item.find();
+        const items = await Item.find();
         res.status(200).json(items)
     } catch (error) {
         res.status(500).json({
@@ -13,3 +13,5 @@ router.get('/', async (req, res) => {
         })
     }
 })
+
+module.exports = router;
