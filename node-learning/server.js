@@ -53,8 +53,8 @@ dotenv.config();
 
 const itemRoutes = require('./Routes/itemRoutes');
 const app = express();
-app.use(express.json);
-app.use('items', itemRoutes);
+app.use(express.json());
+app.use('/items', itemRoutes);
 
 mongoose
     .connect(process.env.MONGO_URI)
