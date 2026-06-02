@@ -14,4 +14,23 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.post('/', async (req, res) => {
+    try {
+        const { name, decription, price } = req.body
+        if (!name || !descrition || price === undefined) {
+            return res.status(400).json({
+                message: 'All fields are required'
+            })
+        }
+        const item = await Itme.create({
+            name, descrition, price
+        })
+        res.status(201).json();
+    } catch (error) {
+        res.status(500).json({
+            message: error.message
+        })
+    }
+})
+
 module.exports = router;
