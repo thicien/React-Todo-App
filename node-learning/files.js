@@ -6,7 +6,6 @@ fs.readFile('./folder/ftp.txt', (err, data) => {
     console.log(data.toString());
 });
 console.log('Why is this line running faster than the rest');
-
 fs.writeFile('./folder/ftp.txt', 'I am done with this', () => {
     console.log('It a clear penalty obviously!');
 });

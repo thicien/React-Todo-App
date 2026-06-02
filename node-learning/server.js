@@ -21,6 +21,7 @@ app.post('/users', (req, res) => {
         name: newUser
     })
 })
+
 app.listen(PORT, () => {
     console.log(`My server is listening to this port ${PORT}`);
 })
