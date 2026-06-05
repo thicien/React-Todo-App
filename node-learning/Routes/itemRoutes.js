@@ -22,6 +22,7 @@ router.post('/', async (req, res) => {
                 message: 'All fields are required'
             })
         }
+        
         const item = await Itme.create({
             name, descrition, price
         })
