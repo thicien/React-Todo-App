@@ -13,7 +13,6 @@ router.get('/', async (req, res) => {
         })
     }
 })
-
 router.post('/', async (req, res) => {
     try {
         const { name, decription, price } = req.body
@@ -22,7 +21,7 @@ router.post('/', async (req, res) => {
                 message: 'All fields are required'
             })
         }
-        
+
         const item = await Itme.create({
             name, descrition, price
         })
