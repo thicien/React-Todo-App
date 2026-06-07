@@ -10,6 +10,7 @@ const users = [
 app.get('/users', (req, res) => {
     res.json(users);
 })
+
 app.post('/users', (req, res) => {
     const newUser = {
         id: users.length + 1,
@@ -25,6 +26,7 @@ app.post('/users', (req, res) => {
 app.listen(PORT, () => {
     console.log(`My server is listening to this port ${PORT}`);
 })
+
 const http = require('http');
 const server = http.createServer((req, res) => {
     console.log(req);
