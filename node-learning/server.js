@@ -18,7 +18,7 @@ app.post('/users', (req, res) => {
     };
     users.push(newUser);
     res.status(200).json({
-        message: 'The new uses added successfully',
+        message: 'The new user added successfully',
         name: newUser
     })
 })
