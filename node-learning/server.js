@@ -46,7 +46,6 @@ server.listen(3000, 'localhost', () => {
     console.log('My server is listening for port: 3000');
 })
 
-
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
